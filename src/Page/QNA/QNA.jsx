@@ -1,0 +1,64 @@
+import React, { useState } from "react";
+import "./QNA.css";
+
+function GiftChoice() {
+  const [message, setMessage] = useState("");
+  const [showOptions, setShowOptions] = useState(false);
+  const [selectedGift, setSelectedGift] = useState("");
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const handleYes = () => {
+    setMessage("Yay! 🎉 You chose me 💖");
+    setShowOptions(true);
+  };
+
+  const handleGiftSelect = (gift) => {
+    setSelectedGift(`Tumne ${gift} choose kiya 🎁`);
+  };
+
+  const moveNoBtn = () => {
+    const audio = new Audio("/no.mp3");
+    audio.play();
+
+    // Random position generate karo
+    const x = Math.floor(Math.random() * 250);
+    const y = Math.floor(Math.random() * 250);
+    setPos({ x, y });
+  };
+
+  return (
+    <div className="gift-container">
+      <h2>Birthday Gift Q&A 🎂</h2>
+      <p>Gift chahiye hai to choose karo:</p>
+      <div className="button-group">
+        <button className="yes-btn" onClick={handleYes}>
+          Yes, I like you 💕
+        </button>
+        <button
+          className="no-btn"
+          onMouseEnter={moveNoBtn}   // PC hover
+          onTouchStart={moveNoBtn}  // Phone touch
+          style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
+        >
+          No
+        </button>
+      </div>
+
+      <p className="message">{message}</p>
+
+      {showOptions && (
+        <div className="gift-options">
+          <p>Now tell me… what gift would make you happiest? 🎁</p>
+          <button onClick={() => handleGiftSelect("Flowers 🌸")}>Flowers 🌸</button>
+          <button onClick={() => handleGiftSelect("Chocolates 🍫")}>Chocolates 🍫</button>
+          <button onClick={() => handleGiftSelect("Books 📚")}>Books 📚</button>
+          <button onClick={() => handleGiftSelect("Surprise 🎉")}>Surprise 🎉</button>
+        </div>
+      )}
+
+      {selectedGift && <p className="message">{selectedGift}</p>}
+    </div>
+  );
+}
+
+export default GiftChoice;

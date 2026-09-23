@@ -1,0 +1,28 @@
+.falling-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.falling-text-target {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: center;
+}
+
+.falling-text-target .word {
+  display: inline-block;
+  cursor: grab;
+  color: #ffffff;
+}
+
+.falling-text-target .word:active {
+  cursor: grabbing;
+}
+
+.falling-text-target .word.highlighted {
+  color: #ff4081; /* Aapka highlight color */
+  font-weight: bold;
+}

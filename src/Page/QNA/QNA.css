@@ -1,0 +1,69 @@
+.no-btn {
+  background-color: #ebafaf;
+  color: #666;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* smooth move */
+  position: relative;
+}
+
+.yes-btn {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.yes-btn:hover {
+  background-color: #ff1493; /* hover effect */
+}
+
+.gift-options {
+  margin-top: 20px;
+}
+
+.gift-options button {
+  background-color: #ffe4e1;
+  border: none;
+  padding: 10px 15px;
+  margin: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.gift-options button:hover {
+  background-color: #ffb6c1;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.gift-container {
+  text-align: center;
+  margin-top: 150px;
+  font-family: Arial, sans-serif;
+}
+
+.gift-container h2 {
+  color: red;
+  font-size: 28px;
+}
+
+.button-group {
+  margin-top: 20px;
+  position: relative;
+}

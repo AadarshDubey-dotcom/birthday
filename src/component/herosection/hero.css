@@ -1,0 +1,81 @@
+/* Hero Container Setup */
+.hero-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, #F9F5F6, #F8E8EE);
+}
+
+.hero-para {
+  margin-top: 12px;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  color: #fdf2f8;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* ScrollExpand Component Styling */
+.hero-scroll-expand {
+  width: 100%;
+  max-width: none;
+  height: 620px;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Overlay Container - Perfectly Centered over Image */
+.hero-overlay-content {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Image ke center midpoint me place karne ke liye */
+  z-index: 10;
+  display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 680px;
+  padding: 24px;
+  box-sizing: border-box;
+  pointer-events: none; /* Scroll events visual glitch rokne ke liye */
+}
+
+/* Birthday Title Header */
+.hero-title {
+  margin: 0;
+  width: 100%;
+  font-size: clamp(2.2rem, 4vw, 5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+/* Birthday Subtitle Text */
+.hero-subtitle {
+  margin: 14px 0 0;
+  width: 100%;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  color: #fdf2f8;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* Responsive adjustments for Mobile Screens */
+@media (max-width: 768px) {
+  .hero-scroll-expand {
+    height: 400px;
+    border-radius: 18px;
+  }
+
+  .hero-overlay-content {
+    padding: 16px;
+    width: 90%; /* Mobile par content out of bound jaane se prevent karne ke liye */
+  }
+}

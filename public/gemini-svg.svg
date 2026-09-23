@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
+  <defs>
+    <!-- Filter for Watercolor / Hand-drawn Texture -->
+    <filter id="watercolor" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <style>
+      .bg { fill: #fcfcfc; }
+      .wb-red { fill: #f04d55; opacity: 0.82; mix-blend-mode: multiply; filter: url(#watercolor); }
+      .wb-orange { fill: #f79433; opacity: 0.82; mix-blend-mode: multiply; filter: url(#watercolor); }
+      .wb-yellow { fill: #fcd835; opacity: 0.85; mix-blend-mode: multiply; filter: url(#watercolor); }
+      .wb-green { fill: #4caf50; opacity: 0.80; mix-blend-mode: multiply; filter: url(#watercolor); }
+      .wb-blue { fill: #2196f3; opacity: 0.80; mix-blend-mode: multiply; filter: url(#watercolor); }
+      .wb-purple { fill: #9c27b0; opacity: 0.80; mix-blend-mode: multiply; filter: url(#watercolor); }
+      
+      .ink { fill: none; stroke: #1a1a1a; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .ink-thin { fill: none; stroke: #1a1a1a; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .ink-fill { fill: #1a1a1a; stroke: none; }
+      
+      .text-sub { font-family: 'Playfair Display', 'Georgia', serif; font-size: 38px; font-weight: 700; fill: #111111; letter-spacing: 2px; }
+      .text-main { font-family: 'Caveat', 'Great Vibes', 'Brush Script MT', cursive; font-size: 95px; font-weight: bold; fill: #111111; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="450" class="bg" />
+
+  <!-- WATERCOLOR SPOTS & BALLOONS BACKGROUND -->
+  <g id="watercolor-blobs">
+    <!-- Top Left Cluster -->
+    <ellipse cx="45" cy="50" rx="42" ry="48" class="wb-green" />
+    <ellipse cx="30" cy="220" rx="45" ry="50" class="wb-red" />
+    <ellipse cx="60" cy="480" rx="45" ry="50" class="wb-orange" />
+    <ellipse cx="145" cy="170" rx="48" ry="55" class="wb-purple" />
+    <ellipse cx="160" cy="390" rx="42" ry="48" class="wb-red" />
+    <ellipse cx="210" cy="300" rx="40" ry="45" class="wb-yellow" />
+    <ellipse cx="260" cy="180" rx="42" ry="48" class="wb-blue" />
+
+    <!-- Top Center Cluster -->
+    <ellipse cx="340" cy="70" rx="40" ry="45" class="wb-red" />
+    <ellipse cx="430" cy="65" rx="45" ry="50" class="wb-yellow" />
+    <ellipse cx="585" cy="130" rx="45" ry="50" class="wb-red" />
+    <ellipse cx="635" cy="110" rx="48" ry="55" class="wb-blue" />
+
+    <!-- Top Right Cluster -->
+    <ellipse cx="730" cy="135" rx="45" ry="50" class="wb-yellow" />
+    <ellipse cx="775" cy="305" rx="48" ry="55" class="wb-green" />
+    <ellipse cx="820" cy="80" rx="42" ry="48" class="wb-red" />
+    <ellipse cx="850" cy="315" rx="45" ry="50" class="wb-purple" />
+    <ellipse cx="895" cy="440" rx="42" ry="48" class="wb-red" />
+    <ellipse cx="915" cy="170" rx="48" ry="55" class="wb-yellow" />
+    <ellipse cx="960" cy="60" rx="42" ry="48" class="wb-green" />
+  </g>
+
+  <!-- DECORATIVE CONFETTI, DUST & STARS -->
+  <g id="doodles">
+    <!-- Stars -->
+    <polygon points="20,110 23,117 30,117 24,122 26,129 20,124 14,129 16,122 10,117 17,117" class="ink-fill" />
+    <polygon points="205,58 208,65 215,65 209,70 211,77 205,72 199,77 201,70 195,65 202,65" class="ink-fill" />
+    <polygon points="315,280 318,285 324,285 319,289 321,295 315,291 309,295 311,289 306,285 312,285" class="ink-fill" />
+    <polygon points="358,85 363,97 375,97 365,104 369,116 358,108 347,116 351,104 341,97 353,97" class="ink-fill" opacity="0.8" />
+    <polygon points="395,245 398,252 405,252 399,257 401,264 395,259 389,264 391,257 385,252 392,252" class="ink-fill" />
+    <polygon points="538,240 541,247 548,247 542,252 544,259 538,254 532,259 534,252 528,247 535,247" class="ink-fill" />
+    <polygon points="760,50 763,57 770,57 764,62 766,69 760,64 754,69 756,62 750,57 757,57" class="ink-fill" />
+    <polygon points="840,630 844,640 855,640 846,647 850,657 840,650 830,657 834,647 825,640 836,640" class="ink-fill" />
+    <polygon points="988,250 990,255 996,255 991,258 993,264 988,260 983,264 985,258 980,255 986,255" class="ink-fill" />
+
+    <!-- Sparkles / Bursts -->
+    <g class="ink-thin">
+      <!-- Left Burst -->
+      <path d="M 355,275 L 355,260 M 355,290 L 355,305 M 340,282 L 325,282 M 370,282 L 385,282" />
+      <path d="M 344,271 L 333,260 M 366,293 L 377,304 M 344,293 L 333,304 M 366,271 L 377,260" />
+      
+      <!-- Right Burst -->
+      <path d="M 485,295 L 485,280 M 485,310 L 485,325 M 470,302 L 455,302 M 500,302 L 515,302" />
+      
+      <!-- Top Burst -->
+      <path d="M 130,40 L 130,28 M 118,52 L 106,52 M 142,52 L 154,52" />
+    </g>
+
+    <!-- Little Circles & Dots -->
+    <circle cx="100" cy="335" r="4" class="ink-fill" />
+    <circle cx="115" cy="83" r="3" fill="none" class="ink" />
+    <circle cx="298" cy="140" r="3" class="ink-fill" />
+    <circle cx="505" cy="145" r="3.5" class="ink-fill" />
+    <circle cx="818" cy="495" r="4" class="ink-fill" />
+    <circle cx="938" cy="275" r="3" class="ink-fill" />
+    
+    <!-- Loops & Streamers -->
+    <path d="M 522,20 C 530,35 550,10 535,50 C 525,70 550,60 540,80" class="ink-thin" />
+    <path d="M 665,220 C 680,205 690,230 670,240 C 655,250 680,270 690,265" class="ink-thin" />
+    <path d="M 880,10 C 895,25 905,5 890,40" class="ink-thin" />
+  </g>
+
+  <!-- BALLOON OUTLINES & STRINGS -->
+  <g id="balloon-outlines" class="ink">
+    <!-- Balloon 1 (Far Left Top) -->
+    <path d="M 10,40 C -5,-10 85,-10 75,40 C 70,65 45,75 42,75 L 43,80 L 37,80 L 38,75 C 35,75 15,65 10,40 Z" />
+    <path d="M 40,80 C 20,110 60,140 42,180 C 30,210 65,250 55,280 C 45,310 70,350 58,400" class="ink-thin" />
+
+    <!-- Balloon 2 (Left Mid Top - Purple) -->
+    <path d="M 110,170 C 95,110 195,110 185,170 C 180,200 152,215 150,215 L 152,220 L 144,220 L 146,215 C 144,215 115,200 110,170 Z" />
+    <!-- Inner Highlight -->
+    <path d="M 125,140 C 120,165 125,185 130,195" class="ink-thin" />
+    <path d="M 148,220 C 130,250 170,270 135,310 C 110,340 160,380 140,430" class="ink-thin" />
+
+    <!-- Balloon 3 (Left Orange Bottom) -->
+    <path d="M 25,480 C 10,420 100,420 90,480 C 85,505 62,515 60,515 L 62,520 L 54,520 L 56,515 C 54,515 30,505 25,480 Z" />
+    <path d="M 58,520 C 40,550 70,580 50,620" class="ink-thin" />
+
+    <!-- Balloon 4 (Blue - Left Center) -->
+    <path d="M 225,180 C 210,120 305,120 295,180 C 290,210 263,225 260,225 L 262,230 L 254,230 L 256,225 C 254,225 228,210 225,180 Z" />
+    <path d="M 275,145 C 282,160 280,180 275,195" class="ink-thin" />
+    <path d="M 258,230 C 240,260 280,290 252,340 C 230,380 270,410 260,450" class="ink-thin" />
+
+    <!-- Balloon 5 (Top Yellow Middle) -->
+    <path d="M 390,50 C 375,-10 470,-10 460,50 C 455,75 430,85 427,85 L 429,90 L 421,90 L 423,85 C 421,85 395,75 390,50 Z" />
+    <path d="M 425,90 C 400,120 435,160 410,210 C 390,250 425,300 415,350" class="ink-thin" />
+
+    <!-- Balloon 6 (Top Blue Center Right) -->
+    <path d="M 590,110 C 575,50 670,50 660,110 C 655,135 632,145 630,145 L 632,150 L 624,150 L 626,145 C 624,145 595,135 590,110 Z" />
+    <path d="M 628,150 C 610,180 650,220 622,270 C 600,310 640,360 630,410" class="ink-thin" />
+
+    <!-- Balloon 7 (Green Right Center) -->
+    <path d="M 735,305 C 720,245 815,245 805,305 C 800,330 777,345 775,345 L 777,350 L 769,350 L 771,345 C 769,345 740,330 735,305 Z" />
+    <path d="M 773,350 C 755,380 795,420 768,470 C 750,500 785,550 775,600" class="ink-thin" />
+
+    <!-- Balloon 8 (Red Right Bottom) -->
+    <path d="M 850,440 C 835,380 930,380 920,440 C 915,465 892,475 890,475 L 892,480 L 884,480 L 886,475 C 884,475 855,465 850,440 Z" />
+    <path d="M 888,480 C 870,510 910,550 882,600" class="ink-thin" />
+
+    <!-- Balloon 9 (Top Far Right Green) -->
+    <path d="M 915,50 C 900,-10 995,-10 985,50 C 980,75 957,85 955,85 L 957,90 L 949,90 L 951,85 C 949,85 920,75 915,50 Z" />
+    <path d="M 953,90 C 935,120 975,170 948,220 C 930,260 970,310 955,360" class="ink-thin" />
+  </g>
+
+  <!-- GREETING TEXT (NO WATERMARK) -->
+  <g id="text-group" text-anchor="middle">
+    <!-- "HAPPY BIRTHDAY" Subheading -->
+    <text x="500" y="240" class="text-sub">HAPPY BIRTHDAY</text>
+    
+    <!-- "Khushi" Main Script Calligraphy -->
+    <text x="500" y="340" class="text-main">Khushi</text>
+  </g>
+</svg>
