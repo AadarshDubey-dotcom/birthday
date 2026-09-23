@@ -1,6 +1,5 @@
 import React from 'react';
 import ScrollExpand from '../ScrollExpand/ScrollExpand.jsx';
-import heroImage from '../../assets/hero.png';
 import './hero.css';
 
 export default function Hero() {
@@ -18,7 +17,7 @@ export default function Hero() {
 </ScrollExpand>
 
 <div style={{ height: '520px' }}>
-  <ScrollExpand src="/hero.jpg" title="Built to scale" mediaZoom={1.35}
+  <ScrollExpand src="/hero.jpg" title="Built to scale"
   startWidth={42}
   startHeight={58}
   startRadius={24}

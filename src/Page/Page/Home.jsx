@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Hero from '../../component/herosection/hero.jsx'
 import FallingText from '../../component/FallingText/FallingText.jsx'
+import { giftChannel } from '../../component/ably/ably.jsx'
 import './Home.css'
 
 function Home() {
+  const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    const receiveMessage = (event) => {
+      setMessage(String(event.data))
+    }
+
+    giftChannel.subscribe('birthday-message', receiveMessage)
+
+    return () => {
+      giftChannel.unsubscribe('birthday-message', receiveMessage)
+    }
+  }, [])
+
   return (
     <div className='page'>
       <div className='page-content'>
+        {message && <div className='live-message'>{message}</div>}
+
         {/* Hero Section */}
         <Hero />
 

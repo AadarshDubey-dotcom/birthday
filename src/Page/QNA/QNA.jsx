@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { giftChannel } from "../../component/ably/ably.jsx";
 import "./QNA.css";
 
 function GiftChoice() {
@@ -8,12 +9,16 @@ function GiftChoice() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   const handleYes = () => {
-    setMessage("Yay! 🎉 You chose me 💖");
+    const nextMessage = "Yay! You chose me!";
+    setMessage(nextMessage);
     setShowOptions(true);
+    giftChannel.publish("birthday-message", nextMessage);
   };
 
   const handleGiftSelect = (gift) => {
-    setSelectedGift(`Tumne ${gift} choose kiya 🎁`);
+    const nextMessage = `Tumne ${gift} choose kiya`;
+    setSelectedGift(nextMessage);
+    giftChannel.publish("birthday-message", nextMessage);
   };
 
   const moveNoBtn = () => {

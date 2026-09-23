@@ -1,4 +1,19 @@
 /* FallingText Container */
+.live-message {
+  position: fixed;
+  top: 5rem;
+  right: 1.5rem;
+  z-index: 10;
+  max-width: min(28rem, calc(100vw - 3rem));
+  padding: 1rem 1.25rem;
+  border: 1px solid #f2bed1;
+  border-radius: 12px;
+  background: #fff7fa;
+  color: #5b2940;
+  box-shadow: 0 8px 24px rgba(91, 41, 64, 0.18);
+  font-weight: 600;
+}
+
 .falling-text-container {
   position: relative;
   z-index: 1;
