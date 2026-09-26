@@ -1,24 +1,36 @@
 import React, { useState } from "react";
-import { giftChannel } from "../../component/ably/ably.jsx";
+import sendEmail from "../../component/Email/email.jsx";
 import "./QNA.css";
 
 function GiftChoice() {
   const [message, setMessage] = useState("");
   const [showOptions, setShowOptions] = useState(false);
   const [selectedGift, setSelectedGift] = useState("");
+  const [emailStatus, setEmailStatus] = useState("");
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   const handleYes = () => {
     const nextMessage = "Yay! You chose me!";
     setMessage(nextMessage);
     setShowOptions(true);
-    giftChannel.publish("birthday-message", nextMessage);
   };
 
-  const handleGiftSelect = (gift) => {
+  const handleGiftSelect = async (gift) => {
     const nextMessage = `Tumne ${gift} choose kiya`;
     setSelectedGift(nextMessage);
-    giftChannel.publish("birthday-message", nextMessage);
+    setEmailStatus("Sending email...");
+
+    try {
+      await sendEmail(gift);
+      setEmailStatus("Email sent successfully.");
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      if (error?.text?.toLowerCase().includes("recipients address is empty")) {
+        setEmailStatus("EmailJS template mein To Email ko {{to_email}} par set karein.");
+      } else {
+        setEmailStatus("Gift selected, but the email could not be sent.");
+      }
+    }
   };
 
   const moveNoBtn = () => {
@@ -62,6 +74,7 @@ function GiftChoice() {
       )}
 
       {selectedGift && <p className="message">{selectedGift}</p>}
+      {emailStatus && <p className="message" role="status">{emailStatus}</p>}
     </div>
   );
 }

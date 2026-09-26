@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Hero from '../../component/herosection/hero.jsx'
 import FallingText from '../../component/FallingText/FallingText.jsx'
-import { giftChannel } from '../../component/ably/ably.jsx'
 import './Home.css'
 
 function Home() {
