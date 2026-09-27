@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Hero from '../../component/herosection/hero.jsx'
+import BirthdayGift from '../../component/BirthdayGift/BirthdayGift.jsx'
 import FallingText from '../../component/FallingText/FallingText.jsx'
 import './Home.css'
 
@@ -19,10 +20,10 @@ function Home() {
 
         {/* Hero Section */}
         <Hero />
-
+        <BirthdayGift />
         {/* FallingText Component */}
         <FallingText
-          text={`Happy Birthday Khushi 🎂✨ May your life always be bug‑free and your happiness scale to infinity 💖`}
+          text={`Happy Birthday, Khushi 🎂✨ Wishing you endless joy, laughter, and success. May your days be bright, your life bug‑free, and your happiness scale to infinity 💖`}
           highlightWords={["Happy", "Birthday", "Khushi", "bug‑free", "happiness"]}
           highlightClass="highlighted"
           trigger="hover"

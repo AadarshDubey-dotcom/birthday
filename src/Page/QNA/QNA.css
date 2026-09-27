@@ -54,8 +54,14 @@
 
 .gift-container {
   text-align: center;
-  margin-top: 150px;
+  margin-top: 70px;
   font-family: Arial, sans-serif;
+  height: 100vh; /* full viewport height for vertical centering */
+}
+.party-wrapper {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center (agar height di ho) */
 }
 
 .gift-container h2 {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import sendEmail from "../../component/Email/email.jsx";
+import Party from '../../component/Party/Party.jsx'
 import "./QNA.css";
 
 function GiftChoice() {
@@ -34,7 +35,7 @@ function GiftChoice() {
   };
 
   const moveNoBtn = () => {
-    const audio = new Audio("/no.mp3");
+    const audio = new Audio("/mo.mp3");
     audio.play();
 
     // Random position generate karo
@@ -46,7 +47,10 @@ function GiftChoice() {
   return (
     <div className="gift-container">
       <h2>Birthday Gift Q&A 🎂</h2>
-      <p>Gift chahiye hai to choose karo:</p>
+      <div className="party-wrapper">
+        <Party />
+      </div>
+      <p>If you want a gift, make your choice:</p>
       <div className="button-group">
         <button className="yes-btn" onClick={handleYes}>
           Yes, I like you 💕
@@ -69,7 +73,6 @@ function GiftChoice() {
           <button onClick={() => handleGiftSelect("Flowers 🌸")}>Flowers 🌸</button>
           <button onClick={() => handleGiftSelect("Chocolates 🍫")}>Chocolates 🍫</button>
           <button onClick={() => handleGiftSelect("Books 📚")}>Books 📚</button>
-          <button onClick={() => handleGiftSelect("Surprise 🎉")}>Surprise 🎉</button>
         </div>
       )}
 
