@@ -10,12 +10,6 @@ function Home() {
     const receiveMessage = (event) => {
       setMessage(String(event.data))
     }
-
-    giftChannel.subscribe('birthday-message', receiveMessage)
-
-    return () => {
-      giftChannel.unsubscribe('birthday-message', receiveMessage)
-    }
   }, [])
 
   return (
