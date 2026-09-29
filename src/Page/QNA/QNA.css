@@ -73,3 +73,10 @@
   margin-top: 20px;
   position: relative;
 }
+
+.animation-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+

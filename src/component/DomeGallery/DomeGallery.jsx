@@ -489,6 +489,15 @@ export default function DomeGallery({
     [openItemFromElement]
   );
 
+  const onTileKeyDown = useCallback(
+    e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      onTileClick(e);
+    },
+    [onTileClick]
+  );
+
   useEffect(() => {
     return () => {
       document.body.classList.remove('dg-scroll-lock');
@@ -533,6 +542,7 @@ export default function DomeGallery({
                   tabIndex={0}
                   aria-label={it.alt || 'Open image'}
                   onClick={onTileClick}
+                  onKeyDown={onTileKeyDown}
                 >
                   <img src={it.src} draggable={false} alt={it.alt} />
                 </div>

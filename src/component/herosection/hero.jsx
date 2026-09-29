@@ -17,7 +17,7 @@ export default function Hero() {
 </ScrollExpand>
 
 <div style={{ height: '520px' }}>
-  <ScrollExpand src="/hero.jpg" title="Built to scale"
+  <ScrollExpand src="/khushi 4.jpg" alt="Khushi birthday memory" title="A birthday memory"
   startWidth={42}
   startHeight={58}
   startRadius={24}

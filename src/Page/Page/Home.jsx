@@ -9,8 +9,13 @@ function Home() {
 
   useEffect(() => {
     const receiveMessage = (event) => {
-      setMessage(String(event.data))
+      if (typeof event.data === 'string' && event.data.trim()) {
+        setMessage(event.data)
+      }
     }
+
+    window.addEventListener('message', receiveMessage)
+    return () => window.removeEventListener('message', receiveMessage)
   }, [])
 
   return (

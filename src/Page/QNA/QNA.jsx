@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import sendEmail from "../../component/Email/email.jsx";
-import Party from '../../component/Party/Party.jsx'
+import Party from "../../component/Party/Party.jsx";
 import "./QNA.css";
 
 function GiftChoice() {
@@ -9,11 +9,13 @@ function GiftChoice() {
   const [selectedGift, setSelectedGift] = useState("");
   const [emailStatus, setEmailStatus] = useState("");
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [playAnimation, setPlayAnimation] = useState(false); // 👈 SVG animation state
 
   const handleYes = () => {
     const nextMessage = "Yay! You chose me!";
     setMessage(nextMessage);
     setShowOptions(true);
+    setPlayAnimation(true); // 👈 trigger animation
   };
 
   const handleGiftSelect = async (gift) => {
@@ -36,9 +38,8 @@ function GiftChoice() {
 
   const moveNoBtn = () => {
     const audio = new Audio("/mo.mp3");
-    audio.play();
+    void audio.play().catch(() => {});
 
-    // Random position generate karo
     const x = Math.floor(Math.random() * 250);
     const y = Math.floor(Math.random() * 250);
     setPos({ x, y });
@@ -51,14 +52,15 @@ function GiftChoice() {
         <Party />
       </div>
       <p>If you want a gift, make your choice:</p>
+
       <div className="button-group">
         <button className="yes-btn" onClick={handleYes}>
           Yes, I like you 💕
         </button>
         <button
           className="no-btn"
-          onMouseEnter={moveNoBtn}   // PC hover
-          onTouchStart={moveNoBtn}  // Phone touch
+          onMouseEnter={moveNoBtn}
+          onTouchStart={moveNoBtn}
           style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
         >
           No
@@ -67,6 +69,7 @@ function GiftChoice() {
 
       <p className="message">{message}</p>
 
+      {/* 👇 SVG Animation appears after Yes click */}
       {showOptions && (
         <div className="gift-options">
           <p>Now tell me… what gift would make you happiest? 🎁</p>

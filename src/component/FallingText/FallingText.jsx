@@ -18,7 +18,7 @@ const FallingText = ({
   const textRef = useRef(null);
   const canvasContainerRef = useRef(null);
 
-  const [effectStarted, setEffectStarted] = useState(false);
+  const [effectStarted, setEffectStarted] = useState(() => trigger === 'auto');
 
   // 1. Text Parsing & Highlights
   useEffect(() => {
@@ -35,10 +35,7 @@ const FallingText = ({
 
   // 2. Trigger Logic
   useEffect(() => {
-    if (trigger === 'auto') {
-      setEffectStarted(true);
-      return;
-    }
+    if (trigger === 'auto') return;
     if (trigger === 'scroll' && containerRef.current) {
       const observer = new IntersectionObserver(
         ([entry]) => {

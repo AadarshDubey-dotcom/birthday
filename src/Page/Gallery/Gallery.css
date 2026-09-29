@@ -1,3 +1,15 @@
-.gallery {
-    background: linear-gradient(135deg, #F9F5F6, #F8E8EE);
+.gallery-page {
+    width: 100%;
+    height: min(760px, calc(100svh - 56px));
+    min-height: 520px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f9f5f6, #f8e8ee);
+}
+
+@media (max-width: 600px) {
+    .gallery-page {
+        height: calc(100svh - 56px);
+        min-height: 460px;
+    }
 }

@@ -2,27 +2,26 @@ import DomeGallery from '../../component/DomeGallery/DomeGallery.jsx';
 import './Gallery.css'
 
 export default function GalleryPage() {
-  // Aap yahan apni custom birthday/crush pictures add kar sakte ho:
   const myImages = [
-    { src: 'khushi 2.jpg', alt: 'Memory 1' },
-    { src: 'khushi 3.png', alt: 'Memory 2' },
-    { src: 'khushi 2.jpg', alt: 'Memory 3' },
-    { src: 'khushi.png', alt: 'Memory 4' },
-    { src: 'khushi 5.jpg', alt: 'Memory 5' },
-    { src: 'khushi 6.jpg', alt: 'Memory 6'},
-    { src: 'khushi 7.jpg', alt: 'Memory 7'}
+    { src: '/khushi 2.jpg', alt: 'Birthday memory 1' },
+    { src: '/khushi 3.png', alt: 'Birthday memory 2' },
+    { src: '/khushi.png', alt: 'Birthday memory 3' },
+    { src: '/khushi 5.jpg', alt: 'Birthday memory 4' },
+    { src: '/khushi 6.jpg', alt: 'Birthday memory 5' },
+    { src: '/khushi 7.jpg', alt: 'Birthday memory 6' },
+    { src: '/khushi 4.jpg', alt: 'Birthday memory 7' }
   ];
 
   return (
-    <div style={{ width: '100vw', height: '100vh', position: 'relative' }} className="galley">
+    <div className="gallery-page">
       <DomeGallery
         images={myImages}
-        fit={0.8}
-        minRadius={500}
+        fit={0.72}
+        minRadius={280}
         maxVerticalRotationDeg={0}
         segments={30}
-        dragDampening={2}
-        grayscale={false} // Color photos ke liye false rakha hai
+        dragDampening={0.8}
+        grayscale={false}
       />
     </div>
   );
